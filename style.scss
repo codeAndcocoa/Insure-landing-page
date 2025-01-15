@@ -1,0 +1,458 @@
+//Fonts
+//?Headings Fonts
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+
+$heading-font: (
+  "Heading": "DM Serif Display",
+);
+
+//? Body Fonts
+@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@700&display=swap");
+
+//Font Weights
+$font-weights: (
+  "Regular": 400,
+  "Bold": 700,
+);
+
+// Fonts used
+$fonts: (
+  "head": "DM Serif Display",
+  "body": "Karla",
+);
+
+//Font size
+$body-font-size: 1rem;
+
+// Colors
+//!Primary Colors
+$primary1: hsl(256, 26%, 20%); /* Dark Violet */
+$primary2: hsl(216, 30%, 68%); /* Grayish Blue  */
+
+//!Neutral Colors
+$neutral1: hsl(270, 9%, 17%); /* Very Dark Violet */
+$neutral2: hsl(273, 4%, 51%); /* Dark Grayish Violet  */
+$neutral3: hsl(0, 0%, 98%); /* Very Light Gray */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: map-get($map: $fonts, $key: "body");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+header,
+section,
+footer {
+  width: 100%;
+}
+header {
+  height: 75.1vh;
+  background: $primary1
+    /* url(../../images/bg-pattern-intro-right-desktop.svg) */;
+  background-position: center -2rem;
+  background-repeat: no-repeat;
+  background-size: 40rem;
+}
+nav {
+  background-color: $neutral3;
+  height: 8vh;
+}
+.landingNav {
+  margin-right: 9rem;
+  font-size: 1rem;
+
+  .nav-item {
+    padding: 1rem;
+    align-content: center;
+  }
+  a {
+    font-family: map-get($map: $fonts, $key: "body");
+    font-weight: map-get($map: $font-weights, $key: "Bold");
+    color: $neutral2;
+    letter-spacing: 1px;
+    cursor: pointer;
+    &:focus,
+    &:active,
+    &:visited {
+      color: $neutral2;
+    }
+    &:hover {
+      color: $primary1;
+    }
+  }
+}
+.plan-btn {
+  outline: none;
+  width: 9rem;
+  background-color: transparent;
+  color: $primary1;
+  font-weight: map-get($map: $font-weights, $key: "Bold");
+  border: 2px solid $primary1;
+  letter-spacing: 1px;
+  &:hover {
+    background-color: $primary1;
+    color: $neutral3;
+  }
+}
+
+//Showcase
+
+.showcase {
+  border: 2px solid white;
+  width: 90%;
+  margin: 3rem auto;
+}
+.intro,
+.image {
+  border: 2px solid greenyellow;
+  flex: 1;
+  padding: 1rem;
+}
+.intro {
+  color: $neutral3;
+  .intro-content {
+    margin-top: 1rem;
+    padding: 2rem;
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: $neutral3;
+      width: 153px;
+      height: 1.5px;
+      top: 0;
+      left: 2rem;
+    }
+    h2 {
+      font-family: map-get($map: $fonts, $key: "head");
+      color: $neutral3;
+      font-size: 3.5rem;
+    }
+    p {
+      font-family: map-get($map: $fonts, $key: "body");
+      color: $neutral3;
+      font-size: 1rem;
+    }
+    .intro-plan-btn {
+      outline: none;
+      width: 9rem;
+      background-color: transparent;
+      color: $neutral3;
+      font-weight: map-get($map: $font-weights, $key: "Bold");
+      border: 2px solid $neutral3;
+      letter-spacing: 1px;
+      &:hover {
+        background-color: $neutral3;
+        color: $primary1;
+      }
+    }
+  }
+}
+.image {
+  img {
+    width: 90%;
+    height: 35rem;
+  }
+}
+
+//Specifications section{
+#specifications {
+  border: 2px solid #ccc;
+  .subtitle {
+    border: 2px solid red;
+    max-width: 30rem;
+    
+    margin-top: 16rem;
+    margin-left: 8rem;
+    color: $neutral1;
+    font-family: map-get($map: $fonts, $key: "head");
+    font-size: 3.5rem;
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: $primary2;
+      width: 146px;
+      height: 2px;
+      left: 0;
+      bottom: 7rem;
+    }
+  }
+}
+.spec-content {
+  border: 2px solid black;
+  width: 90%;
+  margin: 4rem auto;
+
+  img {
+    margin-bottom: 2.2rem;
+  }
+  h3 {
+    color: $neutral1;
+    font-family: map-get($map: $fonts, $key: "head");
+  }
+  p {
+    font-size: 1.1rem;
+    font-family: map-get($map: $fonts, $key: "body");
+    color: $neutral2;
+    margin-top: 1.5rem;
+  }
+}
+
+.find-more {
+  background-color: $primary1;
+  color: $neutral3;
+  width: 90%;
+  margin: 2rem auto;
+  padding: 3rem;
+  h1 {
+    font-family: map-get($map: $fonts, $key: "head");
+    font-weight: map-get($map: $font-weights, $key: "bold");
+    font-size: 3rem;
+    max-width: 30rem;
+  }
+  .find-btn {
+    outline: none;
+    width: 10rem;
+    background-color: transparent;
+    color: $neutral3;
+    font-weight: map-get($map: $font-weights, $key: "Bold");
+    border: 2px solid $neutral3;
+    letter-spacing: 1px;
+    padding: 0.5rem;
+    &:hover {
+      background-color: $neutral3;
+      color: $primary1;
+    }
+  }
+}
+//Footer
+footer {
+  background-color: $neutral3;
+  padding: 2rem;
+}
+.footer-top {
+  width: 90%;
+  margin: 2rem auto;
+  border-bottom: 1.2px solid $primary2;
+  .social-icons {
+    justify-items: end;
+    .icon {
+      cursor: pointer;
+      color: $neutral2;
+      font-size: 1.5rem;
+      &:hover {
+        color: $primary1;
+      }
+    }
+  }
+}
+.useful-links {
+  ul {
+    li:first-child {
+      color: $neutral2;
+    }
+    li {
+      a {
+        color: $neutral1;
+        cursor: pointer;
+        font-family: map-get($map: $fonts, $key: "body");
+        &:hover,
+        &:focus,
+        &:active,
+        &:visited {
+          color: $neutral1;
+        }
+        &:hover {
+          border-bottom: 2px solid $primary1;
+        }
+      }
+    }
+  }
+}
+//MEDIA  QUERIES
+
+@media screen and (width <= 1200px) {
+}
+@media screen and (width <= 1024px) {
+  header {
+    height: 88vh;
+  }
+
+  .landingNav {
+    margin-right: 4rem;
+  }
+  .showcase {
+    margin: 2rem auto;
+  }
+  .image {
+    img {
+      width: 90%;
+      height: auto;
+    }
+  }
+  #specifications {
+    .subtitle {
+      margin-left: 4rem;
+    }
+  }
+}
+@media screen and (width <=992px) {
+}
+@media screen and (width <=768px) {
+  header {
+    height: auto;
+  }
+  .offcanvas-header {
+    height: 5vh;
+    padding: 1rem;
+    .d-flex {
+      margin-top: 2.5rem;
+    }
+  }
+  .offcanvas-body {
+    background: $neutral1 url(../../images/bg-pattern-mobile-nav.svg);
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 25rem;
+    .landingNav {
+      margin-right: auto;
+      .nav-item {
+        padding: 1rem;
+        text-align: center;
+        font-size: 1.1rem;
+      }
+      a {
+        color: $neutral3;
+        letter-spacing: 1px;
+        cursor: pointer;
+        &:focus,
+        &:active,
+        &:visited {
+          color: $neutral3;
+        }
+        &:hover {
+          color: $neutral2;
+        }
+      }
+      .plan-btn {
+        width: 100%;
+        color: $neutral3;
+        border: 2px solid $neutral3;
+        padding: 1.2rem !important;
+        &:hover {
+          background-color: $neutral3;
+          color: $neutral1;
+        }
+      }
+    }
+  }
+  .showcase{
+    width: 100%;
+    margin: 0rem;
+  }
+  .intro,.image{
+    padding: 0;
+  }
+  .image {
+    img {
+      width: 100%;
+      height: 35rem;
+      object-fit: cover;
+    }
+  }
+  .intro-content {
+    padding: 1rem;
+    &::after {
+      display: none;
+    }
+  }
+  #specifications {
+    .subtitle {
+    max-width: auto;
+      left: auto;
+      &::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+  .spec-content {
+    width: 95%;
+  }
+ 
+}
+
+@media screen and (width <= 600px) {
+  .showcase{
+    margin: 0rem;
+  }
+ .image{
+  img{
+    width: 100%;
+    object-fit: cover;
+  }
+ }
+ .intro-content{
+  h2{
+    font-size: 2.6rem;
+  }
+ }
+}
+@media screen and (width >= 1920px) {
+  header {
+    height: 80vh;
+  }
+  .container-fluid {
+    max-width: 90%;
+  }
+  .showcase {
+    margin: 6rem auto;
+  }
+  .intro {
+    .intro-content {
+      h2 {
+        font-size: 4.5rem;
+      }
+      p {
+        font-size: 1.6rem;
+      }
+      .intro-plan-btn {
+        width: 13rem;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .image {
+    img {
+      width: 90%;
+      height: 50rem;
+    }
+  }
+
+  .spec-content {
+    h3 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media screen and (height >= 1300px) {
+  header {
+    height: auto;
+  }
+  .spec-content {
+    width: 95%;
+  }
+}
